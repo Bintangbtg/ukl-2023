@@ -3,13 +3,15 @@ package Laundry;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Transaksi {
+public class Transaksi extends JenisLaundry{
     private ArrayList<Integer> idjenislaundry = new ArrayList<Integer>();
     private ArrayList<Integer> banyak = new ArrayList<Integer>();
     private ArrayList<Integer> idClient = new ArrayList<Integer>();
     
         public JenisLaundry l = new JenisLaundry();
         
+        //Polimorfisme
+        @Override
         public int size(){
             return this.idClient.size();
         }
@@ -52,4 +54,4 @@ public class Transaksi {
     public int getIDBanyak(int banyak){
         return this.banyak.indexOf(banyak);
     }
-     }
+}
