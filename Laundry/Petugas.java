@@ -2,7 +2,7 @@ package Laundry;
 
 import java.util.ArrayList;
 
-public class Petugas implements User {
+public class Petugas extends Client{
     private ArrayList<String> nama = new ArrayList<String>();
     private ArrayList<String> alamat = new ArrayList<String>();
     private ArrayList<String> telepon  = new ArrayList<String>();
@@ -25,7 +25,8 @@ public class Petugas implements User {
         return this.nama.size();
     }
     
-    @Override
+    //Inheritance
+    /*@Override
     public void setNama(String nama){
         this.nama.add(nama);
     }
@@ -36,7 +37,7 @@ public class Petugas implements User {
     @Override
     public void setTelepon(String telepon){
         this.telepon.add(telepon);
-    }
+    }*/
     
     public String getNama(int id){
         return this.nama.get(id);
