@@ -15,14 +15,16 @@ public class AppLaundry {
             String jawab = input.nextLine();
             if(jawab.equalsIgnoreCase("ya")){
                 System.out.println("Masukkan ID Anda");
-                int id = input.nextInt();
+                int id = input.nextInt()-1;
                 System.out.println("Hi Selamat Datang "+c.getNama(id));
-                System.out.println("ID anda "+id);
+                System.out.println("ID anda "+(id+1));
                 System.out.println("Jumlah saldo Anda :"+c.getSaldo(id));
                 menu(id);
         }
           else{
-            System.out.println("Masukkan Nama:");
+                System.out.println("Maap Gabisa :b");
+                System.out.println("Mohon Melakukan Pendaftaran dahulu secara offline \nLokasi kantor diatas tanah dan di bawah Langit :q");
+                /*System.out.println("Masukkan Nama:");
             String nama = input.next();
             c.setNama(nama);
             System.out.println("Masukkan ID yang diinginkan:");
@@ -39,7 +41,7 @@ public class AppLaundry {
             c.addSaldo(saldo);
             System.out.println("Terimakasih telah mendaftar "+nama);
             System.out.println("ID anda "+id);
-            menu(id);
+            menu(id);*/
         }
     }
     public static void tampilLaundry(){
@@ -49,7 +51,7 @@ public class AppLaundry {
             System.out.println("Jenis Laundry :"+jenislaundry.getNamaJenisLaundry(i));
             System.out.println("Harga :"+jenislaundry.getHarga(i));
             System.out.println("Durasi :"+jenislaundry.getDurasi(i));
-            System.out.println("ID :"+t.getIDJenisLaundry(i));
+            System.out.println("ID :"+(i+1));
         }
     }
 
@@ -81,7 +83,7 @@ public class AppLaundry {
             else if(menu==4){
                 tampilLaundry();
                 System.out.println("Masukkan Id laundry yang diinginkan");
-                int laundry = input.nextInt();
+                int laundry = input.nextInt()-1;
                 System.out.println("Masukkan berapa banyak yang akan di laundry:");
                 int banyak = input.nextInt();
                 System.out.println("Jumlah  yang akan di laundry:"+banyak+"kg");
