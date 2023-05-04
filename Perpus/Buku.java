@@ -13,15 +13,15 @@ public class Buku {
     
     public Buku(){
         this.namaBuku.add("Mariposa");
-        this.stok.add(29042007);
+        this.stok.add(29);
         this.harga.add(84150);
         
          this.namaBuku.add("12 Cerita Glen Anggara");
-         this.stok.add(12);
+         this.stok.add(04);
          this.harga.add(84150);
         
          this.namaBuku.add("Laskar Pelangi");
-         this.stok.add(50);
+         this.stok.add(2007);
          this.harga.add(75650);
     }
     
