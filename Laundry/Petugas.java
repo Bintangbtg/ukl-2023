@@ -13,6 +13,11 @@ public class Petugas extends Client{
         this.alamat.add("Spanyol katae");
         this.telepon.add("08 berapa?");
         this.jabatan.add(0);
+        
+        this.nama.add("Pak Alip");
+        this.alamat.add("Banyuwangi");
+        this.telepon.add("08 berapa?");
+        this.jabatan.add(0);
     }
     
     public void setJabatan(int jabatan){
@@ -26,18 +31,7 @@ public class Petugas extends Client{
     }
     
     //Inheritance
-    /*@Override
-    public void setNama(String nama){
-        this.nama.add(nama);
-    }
-    @Override
-    public void setAlamat(String alamat){
-        this.alamat.add(alamat);
-    }
-    @Override
-    public void setTelepon(String telepon){
-        this.telepon.add(telepon);
-    }*/
+   //Karna extends Client tidak perlu manggil setter lagi
     
     public String getNama(int id){
         return this.nama.get(id);
