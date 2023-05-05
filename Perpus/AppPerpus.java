@@ -54,9 +54,12 @@ public class AppPerpus {
                 System.out.println("Masukkan id buku yang ingin dipinjam");
                 int ID = input.nextInt()-1;
                 if(siswa.getStatus(id)==true){
-                    buku.setStok(ID, buku.getStok(ID)-1);
+                    System.out.println("Masukkan Jumlah yang di pinjam:");
+                    int pinjam = input.nextInt();
+                    buku.setStok(ID, buku.getStok(ID)-pinjam);
+                    peminjaman.setBanyak(pinjam);
                     BukuPinjaman = ID;
-                    System.out.println("Terimakasih telah meminjam buku "+buku.getNama(ID));
+                    System.out.println("Terimakasih telah meminjam buku "+buku.getNama(ID)+"Sebanyak"+pinjam);
                     siswa.setStatus(id, false);
                     //siswa.setStatus(ID, false);
                     //siswa.setStatus(peminjaman.getIDSiswa(id), false);
@@ -74,17 +77,21 @@ public class AppPerpus {
                 int ID = input.nextInt()-1;
                 if(siswa.getStatus(id)==false){
                     if(peminjaman.getBuku(ID)==BukuPinjaman){
-                        buku.setStok(ID, buku.getStok(ID)+1);
-                        System.out.println("Terimakasih telah mengembalikan buku "+buku.getNama(ID));
-                        siswa.setStatus(id, true);
-                        //siswa.setStatus(peminjaman.getIDSiswa(id), true);
-                        System.out.println("Ketik apapun dan enter untuk keluar");
-                        key = input.next();
-                    }
-                    else{
-                        System.out.println("Buku yang ingin anda kembalikan tidak sesuai");
-                        System.out.println("Ketik apapun dan enter untuk keluar");
-                        key = input.next();
+                        System.out.println("Masukkan Banyak Buku yang di kembalikan:");
+                        int balik = input.nextInt();
+                        if(peminjaman.getBanyak(ID)==balik){
+                            buku.setStok(ID, buku.getStok(ID)+1);
+                            System.out.println("Terimakasih telah mengembalikan buku "+buku.getNama(ID));
+                            siswa.setStatus(id, true);
+                            //siswa.setStatus(peminjaman.getIDSiswa(id), true);
+                            System.out.println("Ketik apapun dan enter untuk keluar");
+                            key = input.next();
+                        }
+                        else{
+                            System.out.println("Jumlah Buku yang anda Pinjam adalah:"+peminjaman.getBanyak(ID)+"Buku\nMohon kembalikan sesuai dengan yang anda pinjam heiii");
+                            System.out.println("Ketik apapun dan enter untuk keluar");
+                            key = input.next();
+                        }
                     }
                 }
                 else if(siswa.getStatus(id)==true){
@@ -92,16 +99,20 @@ public class AppPerpus {
                     System.out.println("Ketik apapun dan enter untuk keluar");
                     key = input.next();
                 }
-            }
-            else if(menu==6){
+                 else{
+                        System.out.println("Buku yang ingin anda kembalikan tidak sesuai");
+                        System.out.println("Ketik apapun dan enter untuk keluar");
+                        key = input.next();
+                    }
+        }
+             else if(menu==6){
                 tetap = false;
-            }
+            } 
             else{
                 System.out.println("Input anda salah");
                 System.out.println("Ketik apapun dan enter untuk keluar");
                 key = input.next();
             }
-    }
+            }
     }
 }
-    
