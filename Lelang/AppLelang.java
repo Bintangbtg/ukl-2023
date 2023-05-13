@@ -138,7 +138,7 @@ public class AppLelang {
                     System.out.println("Masukkan Harga Tawar untuk "+b.getNamaBarang(idb));
                     int tawaran = y.nextInt();
                     if(tawaran > b.getHargaAwal(idb)){
-                        System.out.println("Masukkan Tawaran dari: "+m.getNama(1));
+                        System.out.println("Masukkan Tawaran dari: "+m.getNama(0));
                         int tawaran2 = y.nextInt();
                         if(tawaran > tawaran2){
                                  System.out.println("Selamat anda menang dengan harga:"+tawaran);
@@ -148,10 +148,10 @@ public class AppLelang {
                                 System.out.println("Sisa saldo anda:"+m.getSaldo(id));
                         }
                         else{
-                            System.out.println("yah sayang sekali anda kalah dari "+m.getNama(1));
+                            System.out.println("yah sayang sekali anda kalah dari "+m.getNama(0));
                             b.editStatus(idb, false);
-                            m.editSaldo(1, m.getSaldo(1)-tawaran2);
-                            System.out.println("Selamat "+m.getNama(1)+" Anda berhak menang dengan tawaran  "+tawaran2+"\nSisa saldo anda:"+m.getSaldo(1));
+                            m.editSaldo(1, m.getSaldo(0)-tawaran2);
+                            System.out.println("Selamat "+m.getNama(0)+" Anda berhak menang dengan tawaran  "+tawaran2+"\nSisa saldo anda:"+m.getSaldo(0));
                         }
                       }
                     else{
